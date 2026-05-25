@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 30% 97%;
+  --foreground: 220 25% 12%;
+  --border: 220 20% 88%;
+  --primary: 220 65% 22%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 35% 93%;
+  --secondary-foreground: 220 65% 22%;
+  --muted: 220 25% 92%;
+  --muted-foreground: 220 15% 45%;
+  --accent: 43 88% 52%;
+  --accent-foreground: 220 25% 12%;
+}
+
+@layer base {
+  * { border-color: hsl(var(--border)); }
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ── Typing indicator ── */
+.typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+}
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #B0BEC5;
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+/* ── Page entrance animations ── */
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+.fade-in-left {
+  animation: fadeInLeft 0.7s ease-out 0.2s both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(2rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-2rem); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Phone floating ── */
+.phone-float {
+  animation: phoneFloat 5s ease-in-out infinite;
+}
+@keyframes phoneFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+
+/* ── Animated badge pulse ring ── */
+@keyframes badgePing {
+  0%      { transform: scale(1);   opacity: 0.8; }
+  75%,100%{ transform: scale(2.2); opacity: 0; }
+}
+.badge-ping { animation: badgePing 1.8s cubic-bezier(0,0,0.2,1) infinite; }
+
+/* ── Stats counter shimmer ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.stat-shimmer {
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary)) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Marquee trust bar ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Floating chat widget ── */
+@keyframes fahimFloat {
+  0%   { transform: translateY(0px)   translateX(0px)  rotate(0deg); }
+  30%  { transform: translateY(-10px) translateX(5px)  rotate(3deg); }
+  60%  { transform: translateY(-6px)  translateX(8px)  rotate(-2deg); }
+  100% { transform: translateY(0px)   translateX(0px)  rotate(0deg); }
+}
+.fahim-float {
+  animation: fahimFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes fahimPulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(22,47,102,0.5), 0 8px 32px rgba(22,47,102,0.35); }
+  50%       { box-shadow: 0 0 0 14px rgba(22,47,102,0),  0 8px 32px rgba(22,47,102,0.35); }
+}
+.fahim-pulse { animation: fahimPulse 2.2s ease-out infinite; }
+
+@keyframes chatSlideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)     scale(1); }
+}
+.chat-slide-up { animation: chatSlideUp 0.28s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+@keyframes bubblePop {
+  from { opacity: 0; transform: scale(0.8) translateX(10px); }
+  to   { opacity: 1; transform: scale(1)   translateX(0); }
+}
+.bubble-pop { animation: bubblePop 0.35s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+@keyframes logoBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+.logo-bob { animation: logoBob 2s ease-in-out infinite; }

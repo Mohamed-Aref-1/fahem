@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+env/
+.venv/
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Node / Frontend
+node_modules/
+dist/
+.cache/
+.parcel-cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Data / Sensitive files
+*.xlsx
+*.parquet
+*.csv
+*.zip
+*.db
+*.sqlite
+fahim_db/
+
+# Specific files
+fahim-backend/diagnose.py
+
+# Secrets / Keys
+.env
+.env.*
+*.pem
+*.key
