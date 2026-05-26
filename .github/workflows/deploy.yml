@@ -40,6 +40,9 @@ jobs:
             npm run build
             cd ..
 
+            echo ">>> Copying frontend to nginx root..."
+            cp -r fahim-frontend/dist/* /var/www/askfahem/
+
             echo ">>> Restarting backend service..."
             systemctl restart fahim-backend
 
