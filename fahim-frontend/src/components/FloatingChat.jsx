@@ -283,15 +283,13 @@ export default function FloatingChat() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3" dir="rtl">
+    <div className={`fixed z-50 flex flex-col items-end gap-3 ${isOpen ? 'inset-0 sm:inset-auto sm:bottom-6 sm:right-6' : 'bottom-4 right-4 sm:bottom-6 sm:right-6'}`} dir="rtl">
 
       {/* ── Chat panel ── */}
       {isOpen && (
         <div
-          className="chat-slide-up flex flex-col overflow-hidden rounded-3xl shadow-2xl border border-white/20"
+          className="chat-slide-up flex flex-col overflow-hidden shadow-2xl w-full h-full sm:rounded-3xl sm:border sm:border-white/20 sm:w-[480px] sm:h-[calc(100vh-150px)]"
           style={{
-            width: '480px',
-            height: 'calc(100vh - 150px)',
             backgroundImage: 'url(/whatsapp_bg.jpeg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',

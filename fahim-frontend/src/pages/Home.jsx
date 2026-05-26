@@ -354,11 +354,11 @@ function LiveDemoSection() {
   const conv = CONVERSATIONS[idx]
 
   return (
-    <section className="py-24 bg-secondary/20" dir="rtl">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">الفرق بين اللي اشترى صح واللي ندم؟ <span className="italic">فاهم</span>.</h2>
-          <p className="text-xl text-muted-foreground">
+    <section className="py-12 sm:py-24 bg-secondary/20" dir="rtl">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">الفرق بين اللي اشترى صح واللي ندم؟ <span className="italic">فاهم</span>.</h2>
+          <p className="text-base sm:text-xl text-muted-foreground">
             فاهم اتدرب على <strong>10 مليون منتج</strong> من نون مع مراجعات المشترين الحقيقيين. النتيجة؟ توصية دقيقة زي دي:
           </p>
         </div>
@@ -420,18 +420,18 @@ export default function HomePage() {
       {/* ── Navbar ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
         style={{ backgroundColor: 'hsl(220 30% 97% / 0.92)' }}>
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="فاهم" className="h-14 w-14 rounded-xl object-cover shadow-sm" />
-            <span className="font-bold text-2xl tracking-tight text-primary">فاهم</span>
+            <img src="/logo.png" alt="فاهم" className="h-10 w-10 sm:h-14 sm:w-14 rounded-xl object-cover shadow-sm" />
+            <span className="font-bold text-xl sm:text-2xl tracking-tight text-primary">فاهم</span>
             <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground bg-secondary/60 px-2 py-0.5 rounded-full mr-1">
               🇪🇬 🇸🇦 🇦🇪
             </span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="hidden md:block text-base text-muted-foreground font-medium">متاح مجاناً الآن</span>
             <Link to="/chat">
-              <button className="rounded-full px-5 py-2 bg-primary text-white shadow hover:shadow-lg transition-all font-bold text-sm cursor-pointer border-0 hover:-translate-y-0.5">
+              <button className="rounded-full px-4 sm:px-5 py-2 bg-primary text-white shadow hover:shadow-lg transition-all font-bold text-xs sm:text-sm cursor-pointer border-0 hover:-translate-y-0.5">
                 جرب فاهم مجاناً ✨
               </button>
             </Link>
@@ -445,7 +445,7 @@ export default function HomePage() {
       </div>
 
       {/* ── Hero ── */}
-      <section className="pt-20 pb-20 px-6 md:pt-28 md:pb-32 overflow-hidden relative">
+      <section className="pt-10 pb-10 px-4 sm:px-6 md:pt-28 md:pb-32 overflow-hidden relative">
         {/* Background gradient */}
         <div className="absolute inset-0 -z-10"
           style={{ background: 'radial-gradient(ellipse 80% 60% at 70% 0%, hsl(220 65% 22% / 0.07) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 0% 100%, hsl(43 88% 52% / 0.05) 0%, transparent 70%)' }} />
@@ -453,19 +453,19 @@ export default function HomePage() {
         {/* Neural brain background */}
         <NeuralBrain style={{ opacity: 0.75, zIndex: 0 }} />
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10" dir="rtl">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10" dir="rtl">
 
           {/* Left: copy */}
           <div className="max-w-xl fade-in-up">
-            <h1 className="text-4xl lg:text-5xl font-extrabold leading-[1.15] mb-5 text-foreground">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.15] mb-5 text-foreground">
               أخيراً حد بيفهمك،<br />
               قبل ما تدفع.
             </h1>
 
             <div className="mb-4" />
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed font-medium">
-              محتار تشتري إيه؟ فاهم بيسألك كام سؤال، بيفهم احتياجاتك،<br />وبيرشحلك أفضل المنتجات على نون مع كوبون خصم حصري في ثواني.
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed font-medium">
+              محتار تشتري إيه؟ فاهم بيسألك كام سؤال، بيفهم احتياجاتك، وبيرشحلك أفضل المنتجات على نون مع كوبون خصم حصري في ثواني.
             </p>
 
             {/* CTAs */}
@@ -492,7 +492,7 @@ export default function HomePage() {
           </div>
 
           {/* Right: animated phone */}
-          <div className="relative fade-in-left flex justify-center lg:-translate-x-[75px]">
+          <div className="relative fade-in-left hidden lg:flex justify-center lg:-translate-x-[75px]">
             {/* glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] blur-3xl rounded-full -z-10"
               style={{ background: 'radial-gradient(circle, hsl(220 65% 22% / 0.12) 0%, hsl(43 88% 52% / 0.08) 60%, transparent 100%)' }} />
@@ -502,8 +502,8 @@ export default function HomePage() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-12 bg-white border-y border-border" dir="rtl">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="py-10 bg-white border-y border-border" dir="rtl">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: '10M+', label: 'منتج محلّل على نون' },
@@ -512,7 +512,7 @@ export default function HomePage() {
               { value: '< 3ث', label: 'متوسط وقت الرد' },
             ].map((s, i) => (
               <div key={i}>
-                <div className="text-3xl md:text-4xl font-extrabold mb-1 stat-shimmer">{s.value}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-1 stat-shimmer">{s.value}</div>
                 <div className="text-sm text-muted-foreground font-medium">{s.label}</div>
               </div>
             ))}
@@ -521,11 +521,11 @@ export default function HomePage() {
       </section>
 
       {/* ── How it works ── */}
-      <section className="py-24 bg-background relative overflow-hidden" dir="rtl">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4">ليه تسأل فاهم؟</h2>
-            <p className="text-xl text-muted-foreground">عشان التسوق مفروض يكون ممتع، مش متعب.</p>
+      <section className="py-12 sm:py-24 bg-background relative overflow-hidden" dir="rtl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4">ليه تسأل فاهم؟</h2>
+            <p className="text-base sm:text-xl text-muted-foreground">عشان التسوق مفروض يكون ممتع، مش متعب.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {[
@@ -563,11 +563,11 @@ export default function HomePage() {
       <LiveDemoSection />
 
       {/* ── Categories ── */}
-      <section className="py-24 bg-white" dir="rtl">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">تقدر تسأل فاهم عن إيه؟</h2>
-            <p className="text-xl text-muted-foreground">من الأجهزة للموضة — فاهم بيلاقيلك الأنسب في ثواني.</p>
+      <section className="py-12 sm:py-24 bg-white" dir="rtl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">تقدر تسأل فاهم عن إيه؟</h2>
+            <p className="text-base sm:text-xl text-muted-foreground">من الأجهزة للموضة — فاهم بيلاقيلك الأنسب في ثواني.</p>
           </div>
           {[
             { label: 'أجهزة وتكنولوجيا', cats: ['📱 موبايلات', '💻 لابتوبات', '❄️ تكييفات', '📺 شاشات', '🎧 سماعات', '📷 كاميرات', '🎮 أجهزة ألعاب', '⌚ ساعات ذكية'] },
@@ -592,17 +592,17 @@ export default function HomePage() {
       </section>
 
       {/* ── Use Cases ── */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden" dir="rtl">
+      <section className="py-12 sm:py-24 bg-primary text-primary-foreground relative overflow-hidden" dir="rtl">
         <div className="absolute inset-0 opacity-5"
           style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 rounded-full mb-5 px-4 py-1.5 text-sm font-semibold"
               style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)' }}>
               ⚡ في أقل من 3 ثواني
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">فاهم مش بس للأجهزة</h2>
-            <p className="text-xl" style={{ color: 'rgba(255,255,255,0.8)' }}>جرب تسأله عن الموضة، الإكسسوارات، أي حاجة — وشوف بإيدك</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">فاهم مش بس للأجهزة</h2>
+            <p className="text-base sm:text-xl" style={{ color: 'rgba(255,255,255,0.8)' }}>جرب تسأله عن الموضة، الإكسسوارات، أي حاجة — وشوف بإيدك</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -650,10 +650,10 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="py-24 bg-secondary/20" dir="rtl">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-3">آراء اللي جربوا فاهم</h2>
+      <section className="py-12 sm:py-24 bg-secondary/20" dir="rtl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3">آراء اللي جربوا فاهم</h2>
             <p className="text-muted-foreground text-lg">من مصر والسعودية والإمارات</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -676,9 +676,9 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-24 bg-background border-t border-border" dir="rtl">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-16">
+      <section className="py-12 sm:py-24 bg-background border-t border-border" dir="rtl">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-3xl font-extrabold">الأسئلة الشائعة</h2>
           </div>
           <div className="space-y-4">
@@ -725,15 +725,15 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden" dir="rtl">
+      <section className="py-12 sm:py-24 bg-primary text-primary-foreground relative overflow-hidden" dir="rtl">
         <div className="absolute inset-0 opacity-10"
           style={{ backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
         <div className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
           style={{ backgroundColor: 'hsl(43 88% 52% / 0.2)' }} />
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="text-5xl mb-6">🛍️</div>
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">جاهز تشتري بذكاء؟</h2>
-          <p className="text-xl mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <div className="text-4xl sm:text-5xl mb-5 sm:mb-6">🛍️</div>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-5 sm:mb-6 leading-tight">جاهز تشتري بذكاء؟</h2>
+          <p className="text-base sm:text-xl mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
             جرب فاهم دلوقتي مجاناً وشوف إزاي ممكن يوفرلك وقت وفلوس.
           </p>
           <p className="text-sm mb-10 font-semibold" style={{ color: 'rgba(255,255,255,0.6)' }}>
@@ -751,8 +751,8 @@ export default function HomePage() {
       <FloatingChat />
 
       {/* ── Footer ── */}
-      <footer className="bg-background py-12 border-t border-border text-center" dir="rtl">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+      <footer className="bg-background py-10 border-t border-border text-center" dir="rtl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center">
           <img src="/logo.png" alt="فاهم" className="w-16 h-16 rounded-2xl object-cover mb-4 shadow-md" />
           <div className="font-bold text-2xl mb-1 text-foreground">فاهم</div>
           <p className="text-muted-foreground mb-2">المساعد الذكي الأول للتسوق على نون</p>
