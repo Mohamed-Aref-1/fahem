@@ -28,7 +28,8 @@ jobs:
             cd /root/Desktop/fahem/fahem
 
             echo ">>> Pulling latest code..."
-            git pull origin master
+            git fetch origin master
+            git reset --hard origin/master
 
             echo ">>> Installing backend dependencies..."
             python3 -m venv fahim-backend/venv
