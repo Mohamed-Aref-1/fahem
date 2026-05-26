@@ -31,7 +31,8 @@ jobs:
             git pull origin master
 
             echo ">>> Installing backend dependencies..."
-            pip3 install -r fahim-backend/requirements.txt --quiet
+            python3 -m venv fahim-backend/venv
+            fahim-backend/venv/bin/pip install -r fahim-backend/requirements.txt --quiet
 
             echo ">>> Building frontend..."
             cd fahim-frontend
