@@ -458,8 +458,8 @@ export default function HomePage() {
           {/* Left: copy */}
           <div className="max-w-xl fade-in-up">
             <h1 className="text-4xl lg:text-5xl font-extrabold leading-[1.15] mb-5 text-foreground">
-              فاهم مش بيبيعلك،<br />
-              بيساعدك تشتري صح.
+              أخيراً حد بيفهمك،<br />
+              قبل ما تدفع.
             </h1>
 
             <div className="mb-4" />
