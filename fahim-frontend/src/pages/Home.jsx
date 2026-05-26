@@ -451,7 +451,9 @@ export default function HomePage() {
           style={{ background: 'radial-gradient(ellipse 80% 60% at 70% 0%, hsl(220 65% 22% / 0.07) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 0% 100%, hsl(43 88% 52% / 0.05) 0%, transparent 70%)' }} />
 
         {/* Neural brain background */}
-        <NeuralBrain style={{ opacity: 0.75, zIndex: 0 }} />
+        <div className="hidden lg:block">
+          <NeuralBrain style={{ opacity: 0.75, zIndex: 0 }} />
+        </div>
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10" dir="rtl">
 
