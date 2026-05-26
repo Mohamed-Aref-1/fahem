@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 let msgId = 0
 const nextId = () => ++msgId
@@ -127,6 +127,24 @@ export default function FloatingChat() {
   // Focus input when chat opens
   useEffect(() => {
     if (isOpen) setTimeout(() => inputRef.current?.focus(), 80)
+  }, [isOpen])
+
+  // Lock body scroll on mobile when chat is open to prevent keyboard pushing header away
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
   }, [isOpen])
 
   const timeStr = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' })
@@ -288,7 +306,7 @@ export default function FloatingChat() {
       {/* ── Chat panel ── */}
       {isOpen && (
         <div
-          className="chat-slide-up flex flex-col overflow-hidden shadow-2xl w-full h-full sm:rounded-3xl sm:border sm:border-white/20 sm:w-[480px] sm:h-[calc(100vh-150px)]"
+          className="chat-slide-up flex flex-col overflow-hidden shadow-2xl w-full h-[100dvh] sm:rounded-3xl sm:border sm:border-white/20 sm:w-[480px] sm:h-[calc(100vh-150px)]"
           style={{
             backgroundImage: 'url(/whatsapp_bg.jpeg)',
             backgroundSize: 'cover',
@@ -326,12 +344,11 @@ export default function FloatingChat() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 flex flex-col gap-1">
+          <div className="flex-1 overflow-y-auto px-4 py-3 flex flex-col gap-1 min-h-0">
             {messages.map(msg => (
               <div key={msg.id}>
                 {msg.role === 'bot' ? (
-                  <div className="flex items-end gap-2 mb-1 mt-2">
-                    <img src="/logo.png" alt="فاهم" className="w-8 h-8 rounded-full object-cover shrink-0 shadow-sm self-start mt-1" />
+                  <div className="flex justify-end items-end gap-2 mb-1 mt-2">
                     <div className="max-w-[84%]">
                       <div className="bg-white rounded-tl-none rounded-tr-2xl rounded-b-2xl px-3.5 py-2.5 text-base text-gray-900 shadow-sm">
                         {msg.streaming && !msg.text && !msg.toolCalls?.length ? (
@@ -350,6 +367,7 @@ export default function FloatingChat() {
                         )}
                       </div>
                     </div>
+                    <img src="/logo.png" alt="فاهم" className="w-8 h-8 rounded-full object-cover shrink-0 shadow-sm self-start mt-1" />
                   </div>
                 ) : (
                   <div className="flex justify-start mb-1 mt-2">

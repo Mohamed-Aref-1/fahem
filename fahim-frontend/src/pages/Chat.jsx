@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 let msgId = 0
 const nextId = () => ++msgId
@@ -248,12 +248,11 @@ export default function ChatPage() {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-3 pb-4 flex flex-col gap-1 z-10 relative">
+        <div className="flex-1 overflow-y-auto px-3 pb-4 flex flex-col gap-1 z-10 relative min-h-0">
           {messages.map(msg => (
             <div key={msg.id}>
               {msg.role === 'bot' ? (
-                <div className="flex items-end gap-1.5 mb-1 mt-2">
-                  <img src="/logo.png" alt="فاهم" className="w-7 h-7 rounded-full object-cover shrink-0 shadow-sm self-start mt-1" />
+                <div className="flex justify-end items-end gap-1.5 mb-1 mt-2">
                   <div className="max-w-[82%]">
                     <div className="bg-white rounded-tl-none rounded-tr-2xl rounded-b-2xl px-3.5 py-2.5 text-sm text-gray-900 shadow-sm">
                       {msg.streaming && !msg.text ? (
@@ -271,6 +270,7 @@ export default function ChatPage() {
                       )}
                     </div>
                   </div>
+                  <img src="/logo.png" alt="فاهم" className="w-7 h-7 rounded-full object-cover shrink-0 shadow-sm self-start mt-1" />
                 </div>
               ) : (
                 <div className="flex justify-start mb-1 mt-2">
